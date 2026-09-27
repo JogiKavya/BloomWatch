@@ -1,0 +1,120 @@
+{
+  "target": "Quality (Bad=1, Good=0)",
+  "feature_columns": [
+    "temperature",
+    "ph",
+    "dissolved_oxygen",
+    "salinity",
+    "turbidity",
+    "chlorophyll",
+    "nitrate"
+  ],
+  "source_columns": [
+    "Temperature",
+    "pH",
+    "Dissolved_Oxygen",
+    "Salinity",
+    "Turbidity",
+    "Chlorophyll",
+    "Nitrate"
+  ],
+  "best_model": "Logistic Regression",
+  "selection_rule": "Highest Bad-class recall, then F1 and ROC-AUC on held-out stratified test data.",
+  "class_distribution": {
+    "Good": 90754,
+    "Bad": 9246
+  },
+  "results": [
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.6612,
+      "precision_bad": 0.1641,
+      "recall_bad": 0.6512,
+      "f1_bad": 0.2622,
+      "roc_auc": 0.7222,
+      "confusion_matrix": [
+        [
+          12020,
+          6131
+        ],
+        [
+          645,
+          1204
+        ]
+      ]
+    },
+    {
+      "model": "Decision Tree",
+      "accuracy": 0.7811,
+      "precision_bad": 0.2031,
+      "recall_bad": 0.4678,
+      "f1_bad": 0.2832,
+      "roc_auc": 0.6342,
+      "confusion_matrix": [
+        [
+          14756,
+          3395
+        ],
+        [
+          984,
+          865
+        ]
+      ]
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.892,
+      "precision_bad": 0.4091,
+      "recall_bad": 0.3786,
+      "f1_bad": 0.3933,
+      "roc_auc": 0.7057,
+      "confusion_matrix": [
+        [
+          17140,
+          1011
+        ],
+        [
+          1149,
+          700
+        ]
+      ]
+    },
+    {
+      "model": "XGBoost",
+      "accuracy": 0.9145,
+      "precision_bad": 0.6535,
+      "recall_bad": 0.1612,
+      "f1_bad": 0.2586,
+      "roc_auc": 0.7068,
+      "confusion_matrix": [
+        [
+          17993,
+          158
+        ],
+        [
+          1551,
+          298
+        ]
+      ]
+    },
+    {
+      "model": "KNN",
+      "accuracy": 0.9121,
+      "precision_bad": 0.6243,
+      "recall_bad": 0.1222,
+      "f1_bad": 0.2044,
+      "roc_auc": 0.6865,
+      "confusion_matrix": [
+        [
+          18015,
+          136
+        ],
+        [
+          1623,
+          226
+        ]
+      ]
+    }
+  ],
+  "limitation": "This is water-quality classification from a synthetic dataset, not HAB prediction or forecasting."
+}
